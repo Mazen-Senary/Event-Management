@@ -28,11 +28,11 @@ class _LoginScreenState extends State<LoginScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const SizedBox(height: 60),
-                const Text('Welcome Back!', style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold)),
-                const SizedBox(height: 10),
+                 SizedBox(height: 60),
+                 Text('Welcome Back!', style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold)),
+                SizedBox(height: 10),
                 Text('Login to your account', style: TextStyle(color: Colors.grey[600])),
-                const SizedBox(height: 40),
+                 SizedBox(height: 40),
                 Form(
                   key: _formKey,
                   child: Column(

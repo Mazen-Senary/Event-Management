@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../Business Layer/Authentication.dart';
-import '../events_model.dart'; // Your Events class
+import '../events_model.dart';
+import 'BookingScreen.dart'; // Your Events class
 
 class EventDetailScreen extends StatelessWidget {
   final Events event;
@@ -22,7 +23,7 @@ class EventDetailScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Event Image Placeholder (you can add real images later)
+
             Container(
               height: 200,
               width: double.infinity,
@@ -45,20 +46,24 @@ class EventDetailScreen extends StatelessWidget {
               height: 55,
               child: ElevatedButton(
                 onPressed: () {
+                  final user = Authentication().currentUser;
                   if (user == null) {
                     Navigator.pushNamed(context, '/login');
                     ScaffoldMessenger.of(context).showSnackBar(
-                      const SnackBar(content: Text('Please login to register for this event')),
+                      const SnackBar(content: Text('Please login to book tickets')),
                     );
                   } else {
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(content: Text('Successfully registered for ${event.eventTitle}!')),
+                    // Navigate to TicketBookingScreen
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => TicketBookingScreen(event: event),
+                      ),
                     );
-                    // Future: Save to Supabase here
                   }
                 },
                 style: ElevatedButton.styleFrom(backgroundColor: Colors.blue),
-                child: const Text('Register for Event', style: TextStyle(fontSize: 20)),
+                child: const Text('Book Tickets', style: TextStyle(fontSize: 20)),
               ),
             ),
           ],
