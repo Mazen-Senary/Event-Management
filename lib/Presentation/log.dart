@@ -13,7 +13,7 @@ class _LoginScreenState extends State<LoginScreen> {
   final _formKey = GlobalKey<FormState>();
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
-  final _authService = Authentication();
+  final _authService = Authentication(); // object lel class authentication 3lshan aklm business layer
 
   bool _loading = false;
   String? _error;
@@ -89,18 +89,18 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 
   Future<void> _login() async {
-    if (!_formKey.currentState!.validate()) return;
+    if (!_formKey.currentState!.validate()) return; // lw el fields msh valid return
 
-    setState(() => _loading = true);
+    setState(() => _loading = true); // laoding screen
 
-    final user = await _authService.login(
+    final user = await _authService.login( // wait until user logs in
       _emailController.text,
       _passwordController.text,
     );
 
-    setState(() => _loading = false);
+    setState(() => _loading = false); // stop loading the screen
 
-    if (user != null) {
+    if (user != null) { // lw fi user object return
       Navigator.pushNamed(context, '/catalog');
     } else {
       setState(() => _error = 'Wrong email or password');

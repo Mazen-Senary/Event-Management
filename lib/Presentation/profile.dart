@@ -17,7 +17,6 @@ class ProfileScreen extends StatelessWidget {
         ),
       );
     }
-
     // Use email directly — always available, no loading needed
     final email = user.email ?? 'No email';
 

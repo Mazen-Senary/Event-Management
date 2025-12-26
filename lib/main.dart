@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import 'Presentation/log.dart';
 import 'Presentation/profile.dart';
-import 'events_view.dart';  // Your EventsCatalogueScreen file
+import 'events_view.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: '/login',   // ← App starts directly on Login screen
+      initialRoute: '/login',
       routes: {
         '/login': (context) =>  LoginScreen(),
         '/register': (context) =>  RegistrationScreen(),

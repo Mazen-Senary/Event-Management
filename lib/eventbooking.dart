@@ -1,7 +1,7 @@
 import 'package:architecture_project/paymentstrategy.dart';
 
 class EventBooking{
-  PaymentStrategy? paymentStrategy;
+  PaymentStrategy? paymentStrategy; //object mn paymentstratetgy ? mean null safety
   void setPaymentMethod(PaymentStrategy payment){
     paymentStrategy = payment;
   }

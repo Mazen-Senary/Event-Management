@@ -99,7 +99,7 @@ class EventController {
       numberofSeats: 500,
     ),
   ];
-  List <Events>filteredEvents = [];
+  List <Events>filteredEvents = []; //list el btzhr lel user ama ydkhol el homescreen
   String searchBarText = '';
   String chosenCategory = 'All';
 
@@ -117,8 +117,8 @@ class EventController {
     filterSearch();
   }
 
-  void filterSearch() {
-    filteredEvents = events.where((event) {
+  void filterSearch() {// bt3ml el filter nafsha
+    filteredEvents = events.where((event) {   //where di btseeb el events el mwgoda mn el list bas el bt7a22 el condition el howa le body
       // Search match (title or location)
       bool matchesSearch = event.eventTitle.toLowerCase().contains(
           searchBarText) ||
@@ -129,7 +129,7 @@ class EventController {
           event.category == chosenCategory;
 
       return matchesSearch && matchesCategory;
-    }).toList();
+    }).toList(); //bt3mlha ka list
   }
 
   List<String> get allCategories {

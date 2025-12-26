@@ -14,12 +14,12 @@ class EventsCatalogueScreen extends StatefulWidget {
 }
 
 class _EventsCatalogueScreenState extends State<EventsCatalogueScreen> {
-  late EventController controller;
+  late EventController controller; // late y3ni h3rfo odam
 
   @override
-  void initState() {
+  void initState() {//function btrun awl ma t load screen
     super.initState();
-    controller = EventController();
+    controller = EventController();//b3rf el object
   }
 
   @override
@@ -30,7 +30,6 @@ class _EventsCatalogueScreenState extends State<EventsCatalogueScreen> {
         backgroundColor: Colors.blue,
         foregroundColor: Colors.white,
         actions: [
-          // Wishlist icon with badge
           IconButton(
             icon: Stack(
               children: [
